@@ -1,14 +1,44 @@
 html,
 body {
-    background-color: rgb(204, 255, 255);
-    height: 100%;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/typescript-project/assets/layered-waves-haikei.svg);
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap"') format('truetype');
+  }
+
+.temp {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+}
+
+.iconoWeather img{
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 1.8rem;
+    left: 7.5rem;
 }
 
 .contenedor-main {
+    font-family: 'Roboto', sans-serif;
     background-color: white;
     display: flex;
     border-radius: 15px;

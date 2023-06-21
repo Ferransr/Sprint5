@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+let temperatura;
 let chiste;
 ;
 const reportJokes = [];
@@ -60,8 +61,9 @@ const llamarChistes = () => {
         llamarChiste1();
     else
         llamarChiste2();
+    cambiarImagenDeFondo();
 };
-function puntuacion(score) {
+const puntuacion = (score) => {
     let report = {
         joke: chiste,
         score: score,
@@ -70,4 +72,34 @@ function puntuacion(score) {
     reportJokes.push(report);
     console.table(reportJokes);
     ocultarBotones();
+};
+const weather = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const respuesta = yield fetch('https://api.openweathermap.org/data/2.5/weather?lat=41.3851&lon=2.1734&units=metric&appid=ee11567202766ed1b15e51654dcbf58e');
+        const datos = yield respuesta.json();
+        const temperatura = datos.main.temp;
+        const icono = datos.weather[0].icon;
+        document.getElementById('temp').innerHTML = temperatura.toFixed(1) + 'º' + 'C';
+        const iconoURL = `http://openweathermap.org/img/w/${icono}.png`;
+        const iconoElemento = document.createElement('img');
+        iconoElemento.src = iconoURL;
+        document.getElementById('iconoWeather').appendChild(iconoElemento);
+        console.log(datos);
+    }
+    catch (error) {
+        console.log("Error al llamar a la API:", error);
+    }
+});
+weather();
+function cambiarImagenDeFondo() {
+    const imagenesDeFondo = [
+        'assets/layered-waves-haikei.svg',
+        'assets/layered-waves-haikei1.svg',
+        'assets/layered-waves-haikei2.svg',
+        'assets/layered-waves-haikei3.svg',
+        'assets/layered-waves-haikei4.svg'
+    ];
+    const indiceAleatorio = Math.floor(Math.random() * imagenesDeFondo.length);
+    const imagenSeleccionada = imagenesDeFondo[indiceAleatorio];
+    document.body.style.backgroundImage = `url(${imagenSeleccionada})`;
 }
