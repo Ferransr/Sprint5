@@ -17,7 +17,7 @@ body {
 @font-face {
     font-family: 'Roboto', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap"') format('truetype');
-  }
+}
 
 .temp {
     color: white;
@@ -29,7 +29,7 @@ body {
     left: 3rem;
 }
 
-.iconoWeather img{
+.iconoWeather img {
     width: 4rem;
     height: 4rem;
     position: absolute;
