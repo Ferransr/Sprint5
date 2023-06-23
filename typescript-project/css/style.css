@@ -16,8 +16,8 @@ body {
 
 @font-face {
     font-family: 'Roboto', sans-serif;
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap') format('truetype');
-}
+    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap"') format('truetype');
+  }
 
 .temp {
     color: white;
@@ -47,10 +47,9 @@ body {
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-bottom: 200px;
     width: 700px;
     height: 400px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .titulo {
