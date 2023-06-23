@@ -154,4 +154,15 @@ body {
         font-size: auto;
     }
 
+    @media only screen 
+        and (device-width: 390px) 
+        and (device-height: 844px) 
+        and (-webkit-device-pixel-ratio: 3) {
+        /* Estilos para el iPhone 12 */
+        .contenedor-main .boton-score {
+            margin: 5px auto; /* Ajusta el margen vertical para el iPhone 12 */
+        }
+}
+
+
 }
