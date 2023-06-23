@@ -40,7 +40,6 @@ body {
 .contenedor-main {
     font-family: 'Roboto', sans-serif;
     color: white;
-    /* background-color: rgba(0, 247, 255, 0.284); */
     display: flex;
     border-radius: 15px;
     flex-direction: column;
@@ -49,7 +48,6 @@ body {
     align-items: center;
     width: 700px;
     height: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .titulo {
