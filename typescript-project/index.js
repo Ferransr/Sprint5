@@ -10,7 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 let temperatura;
 let chiste;
-;
 const reportJokes = [];
 const mostrarBotones = () => {
     const botonesScore = document.querySelectorAll(".boton-score");
@@ -34,7 +33,7 @@ const llamarChiste1 = () => __awaiter(void 0, void 0, void 0, function* () {
         const datos = yield respuesta.json();
         document.getElementById("texto-chiste").innerHTML = datos.joke;
         chiste = datos.joke;
-        console.log('JOKE=>', datos);
+        console.log("JOKE=>", datos);
     }
     catch (error) {
         console.log("Error al llamar a la API:", error);
@@ -47,7 +46,7 @@ const llamarChiste2 = () => __awaiter(void 0, void 0, void 0, function* () {
         const datos = yield respuesta.json();
         document.getElementById("texto-chiste").innerHTML = datos.value;
         chiste = datos.value;
-        console.log('JOKE2=>', datos);
+        console.log("JOKE2=>", datos);
     }
     catch (error) {
         console.log("Error al llamar a la API:", error);
@@ -75,15 +74,16 @@ const puntuacion = (score) => {
 };
 const weather = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const respuesta = yield fetch('https://api.openweathermap.org/data/2.5/weather?lat=41.3851&lon=2.1734&units=metric&appid=ee11567202766ed1b15e51654dcbf58e');
+        const respuesta = yield fetch("https://api.openweathermap.org/data/2.5/weather?lat=41.3851&lon=2.1734&units=metric&appid=ee11567202766ed1b15e51654dcbf58e");
         const datos = yield respuesta.json();
         const temperatura = datos.main.temp;
         const icono = datos.weather[0].icon;
-        document.getElementById('temp').innerHTML = temperatura.toFixed(1) + 'º' + 'C';
+        document.getElementById("temp").innerHTML =
+            temperatura.toFixed(1) + "º" + "C";
         const iconoURL = `http://openweathermap.org/img/w/${icono}.png`;
-        const iconoElemento = document.createElement('img');
+        const iconoElemento = document.createElement("img");
         iconoElemento.src = iconoURL;
-        document.getElementById('iconoWeather').appendChild(iconoElemento);
+        document.getElementById("iconoWeather").appendChild(iconoElemento);
         console.log(datos);
     }
     catch (error) {
@@ -93,11 +93,11 @@ const weather = () => __awaiter(void 0, void 0, void 0, function* () {
 weather();
 function cambiarImagenDeFondo() {
     const imagenesDeFondo = [
-        'assets/layered-waves-haikei.svg',
-        'assets/layered-waves-haikei1.svg',
-        'assets/layered-waves-haikei2.svg',
-        'assets/layered-waves-haikei3.svg',
-        'assets/layered-waves-haikei4.svg'
+        "assets/layered-waves-haikei.svg",
+        "assets/layered-waves-haikei1.svg",
+        "assets/layered-waves-haikei2.svg",
+        "assets/layered-waves-haikei3.svg",
+        "assets/layered-waves-haikei4.svg",
     ];
     const indiceAleatorio = Math.floor(Math.random() * imagenesDeFondo.length);
     const imagenSeleccionada = imagenesDeFondo[indiceAleatorio];
